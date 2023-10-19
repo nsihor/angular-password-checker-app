@@ -34,4 +34,34 @@ export class PasswordCheckerComponent {
       }
     }
   }
+
+  get indicatorOne() {
+    return {
+      'bg-slate-400': this.passLevel === 'empty',
+      'bg-red-600':
+        this.passLevel === 'easy' || this.passLevel === 'lessThanMin',
+      'bg-yellow-300': this.passLevel === 'medium',
+      'bg-green-600': this.passLevel === 'strong',
+    };
+  }
+
+  get indicatorTwo() {
+    return {
+      'bg-slate-400': this.passLevel === 'empty' || this.passLevel === 'easy',
+      'bg-red-600': this.passLevel === 'lessThanMin',
+      'bg-yellow-300': this.passLevel === 'medium',
+      'bg-green-600': this.passLevel === 'strong',
+    };
+  }
+
+  get indicatorThree() {
+    return {
+      'bg-slate-400':
+        this.passLevel === 'empty' ||
+        this.passLevel === 'easy' ||
+        this.passLevel === 'medium',
+      'bg-red-600': this.passLevel === 'lessThanMin',
+      'bg-green-600': this.passLevel === 'strong',
+    };
+  }
 }
