@@ -17,9 +17,9 @@ export class PasswordCheckerComponent {
     } else if (password.length < 8) {
       this.passLevel = 'lessThanMin';
     } else {
-      const hasLetters = /[a-zA-Z]/.test(password);
+      const hasLetters = /[a-zA-Zа-яА-Я]/.test(password);
       const hasNumbers = /\d/.test(password);
-      const hasSymbols = /[!@#$%^&*]/.test(password);
+      const hasSymbols = /[!@#$%^&*₴?~]/.test(password);
 
       if (hasLetters && hasNumbers && hasSymbols) {
         this.passLevel = 'strong';
